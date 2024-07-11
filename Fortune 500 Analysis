@@ -58,6 +58,8 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
+-- Analysis:
+
 
 -- What's the average paid time off days in the Finance industry?
 SELECT AVG(paid_time_off_days)
@@ -77,6 +79,14 @@ GROUP BY industry
 HAVING revenue>=300 
 ORDER BY revenue DESC
 
-
+-- Assign all the companies in Retail industry as 'large_company','Medium_company' or 'Small_company' based on the number of employies. 
+SELECT company_name, 
+CASE 
+  WHEN employees>=200000 THEN 'large_company'
+  WHEN employees>=100000 THEN 'Medium_company'
+  ELSE 'Small_company'
+END AS Company_size
+FROM fortune_companies
+WHERE industry='Retail';
 
 
