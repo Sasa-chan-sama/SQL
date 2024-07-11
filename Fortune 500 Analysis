@@ -61,12 +61,12 @@ VALUES
 -- Analysis:
 
 
--- What's the average paid time off days in the Finance industry?
+-- What's the average paid time off days in the Retail industry?
 SELECT AVG(paid_time_off_days)
 FROM fortune_companies
 WHERE  industry='Retail'
 
--- Which companies has minimum of 6.0 tenure *and* have at least 13weeks of maternity leave?
+-- Which companies has minimum of 6.0 tenure *and* have at least 13 weeks of maternity leave?
 SELECT company_name, maternity_leave_weeks, avg_employee_tenure
 FROM fortune_companies
 WHERE avg_employee_tenure>=6.0 AND maternity_leave_weeks>=13
