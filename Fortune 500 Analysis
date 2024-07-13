@@ -61,25 +61,25 @@ VALUES
 -- Analysis:
 
 
--- What's the average paid time off days in the Retail industry?
+#1. What's the average paid time off days in the Retail industry?
 SELECT AVG(paid_time_off_days)
 FROM fortune_companies
 WHERE  industry='Retail'
 
--- Which companies has minimum of 6.0 tenure *and* have at least 13 weeks of maternity leave?
+#2. Which companies has minimum of 6.0 tenure *and* have at least 13 weeks of maternity leave?
 SELECT company_name, maternity_leave_weeks, avg_employee_tenure
 FROM fortune_companies
 WHERE avg_employee_tenure>=6.0 AND maternity_leave_weeks>=13
 ORDER BY maternity_leave_weeks DESC;
 
- -- Which industries have the highest revenue? Only show industries above 300 revenue.
+ #3. Which industries have the highest revenue? Only show industries above 300 revenue.
 SELECT industry,ROUND(revenue) as revenue_in_billion
 FROM fortune_companies
 GROUP BY industry
 HAVING revenue>=300 
 ORDER BY revenue DESC
 
--- Assign all the companies in Retail industry as 'large_company','Medium_company' or 'Small_company' based on the number of employies. 
+#4. Assign all the companies in Retail industry as 'large_company','Medium_company' or 'Small_company' based on the number of employies. 
 SELECT company_name, 
 CASE 
   WHEN employees>=200000 THEN 'large_company'
