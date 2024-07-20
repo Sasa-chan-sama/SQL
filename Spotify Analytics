@@ -27,4 +27,16 @@ time_signature integer NOT NULL
 --Then I inserted the Spotify Data .csv into the table.
 --Next, I explored the data using the following SQL. 
 
+#1 Which artist has the highest popularity with danceability above 0.7?
+SELECT artist_name, MAX(popularity),danceability
+FROM BIT_DB.Spotifydata
+WHERE danceability >=0.7
 
+#2 Assign all the artist as 'high_energy', 'mediuem_energy' and 'low_energy'.
+SELECT artist_name,
+CASE 
+ WHEN energy>=0.8 THEN 'high_energy'
+ WHEN energy>=0.6 THEN 'mediuem_energy'
+ ELSE 'low_energy'
+END AS "energy_level"
+FROM BIT_DB.Spotifydata
