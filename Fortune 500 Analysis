@@ -9,8 +9,7 @@ CREATE TABLE fortune_companies (
     healthcare_benefits BIT,
     paid_time_off_days INTEGER,
     maternity_leave_weeks INTEGER,
-    avg_employee_tenure REAL
-);
+    avg_employee_tenure REAL);
 
 INSERT INTO fortune_companies (company_name, industry, revenue, employees, healthcare_benefits, paid_time_off_days, maternity_leave_weeks, avg_employee_tenure)
 VALUES
@@ -59,7 +58,6 @@ VALUES
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
 -- Analysis:
-
 
 #1. What's the average paid time off days in the Retail industry?
 SELECT AVG(paid_time_off_days)
